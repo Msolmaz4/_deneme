@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Roboto } from 'next/font/google'
-import {cookies} from 'next/headers'
+import { cookies } from 'next/headers'
+import Trial from './trial'
 
 
 
@@ -11,13 +12,13 @@ const roboto = Roboto({
   subsets: ['latin'],
   display: 'swap',
 })
- 
+
 
 
 const Page = () => {
   const newCookies = cookies()
- // console.log(newCookies.getAll())hepsine ulasmak icin
-// console.log(newCookies.get('cookies').value)birirne ulasmak icin veya deger ulasma
+  // console.log(newCookies.getAll())hepsine ulasmak icin
+  // console.log(newCookies.get('cookies').value)birirne ulasmak icin veya deger ulasma
 
   return (
     <>
@@ -32,17 +33,8 @@ const Page = () => {
           surname: 'kkkkk'
         }
       }}>Yonlendirme78888</Link>
-    
-
- 
-
-
-
-
-
-
+      <Trial />
     </>
-
   )
 }
 
