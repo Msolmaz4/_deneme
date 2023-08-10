@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Roboto } from 'next/font/google'
 import { cookies } from 'next/headers'
 import Trial from './trial'
+//redicer kullanmak icin bir tane degisken olisturmak gerekiyor
+import { redirect } from 'next/navigation'
 
 
 
@@ -19,6 +21,15 @@ const Page = () => {
   const newCookies = cookies()
   // console.log(newCookies.getAll())hepsine ulasmak icin
   // console.log(newCookies.get('cookies').value)birirne ulasmak icin veya deger ulasma
+ 
+
+  //farkli sayfalara gitsin dediginde kullanabilirsin
+  //butone verirsen hata alirsin
+  let navi1 = false
+if(navi1){
+  redirect('/about')
+}
+
 
   return (
     <>
