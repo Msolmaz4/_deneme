@@ -16,8 +16,17 @@ const roboto = Roboto({
 })
 
 
+const fechtData = async ()=>{
+  const res = await fetch('https://restcountries.com/v3.1/name/deutschland')
+  return res.json()
+}
+const fechtData1 = async ()=>{
+  const res = await fetch('https://restcountries.com/v3.1/name/united')
+  return res.json()
+}
 
-const Page = () => {
+
+const Page =async () => {
   const newCookies = cookies()
   // console.log(newCookies.getAll())hepsine ulasmak icin
   // console.log(newCookies.get('cookies').value)birirne ulasmak icin veya deger ulasma
@@ -30,6 +39,19 @@ if(navi1){
   redirect('/about')
 }
 
+
+const data =  fechtData()
+//console.log(data,'data')
+const data1 =  fechtData1()
+//console.log(data1,'data')
+
+//coklu daat cekimleride Promise.all kullaniloir daha hiyli olur
+//yukaridaki await sileriy
+
+const resulrData = await Promise.all([
+  data,data1
+])
+console.log(resulrData,'result')
 
   return (
     <>
