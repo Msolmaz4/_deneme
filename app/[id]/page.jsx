@@ -23,5 +23,5 @@ export default Page
 
 export async function generateStaticParams(){
     const post = await fetchData()
-    return post.map(po=>({id :po.id.toSting()}))
+    return post.map(po=>({id :po.id.toString()}))
 }
